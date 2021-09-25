@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CADASTRO DE EMPRESA</title>
+  <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="col-8 m-auto pt-2 pb-2 text-center">
+    <h1>Cadastro de Empresas</h1>
+  </div>
+
+
+  <div class="col-4 m-auto pt-4 pb-2 text-center">
+    <div id="result"></div>
+    {# {{ form.as_p }}#}
+    
+      <div class="col-md-4 card m-auto d-flex formEmpresa">
+        <form name="form" id="form" method="post" action="{% if db %}/update/{{ db.id }}/{% else %}/create/{% endif %}">
+          {% csrf_token %}
+          <label class="form-group mt-3 cad">Nome: {{ form.nome }}</label>
+          <label class="form-group mt-3 cad">Razão Social: {{ form.razao }}</ç>
+          <label class="form-group mt-3 cad">Cnpj: {{ form.cnpj }}</label>
+          <label class="form-group mt-3 cad">Telefone: {{ form.telefone }}</label>
+          <label class="form-group mt-3 cad">Segmento: {{ form.segmento }}</label>
+
+          <input type="submit" class="btn mt-4 mb-4 btnCadastro" value="Salvar">
+          <a href="/" class="btn btn-info">Voltar</a>
+        </form>
+
+      </div>
+
+    
+
+  </div>
+
+  {% load static %}
+  <script src="{% static 'javascript.js' %}"></script>
+</body>
+
+</html>
