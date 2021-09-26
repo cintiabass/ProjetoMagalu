@@ -1,0 +1,70 @@
+
+body{
+    margin: 0;
+    background: linear-gradient(-135deg,#c850c0,#380C91);
+    min-height: 100vh;
+}
+h1, h2, h3, h4, h5, p, span{
+    margin: 0;
+    color: #fff;
+}
+th, td{
+    color: #380C91;
+}
+.container{
+    max-width: 1920px;
+    width: 100%; 
+}
+.row{
+    margin: 0 !important;
+}
+img{
+    width: 150px;
+    height: 150px;
+}
+
+.tabela{
+    background-color: #ffcc33;
+}
+.fundo{
+    background-color: #fff;
+}
+.fundo .btnVisual{
+    background-color: #9E7DE3;
+}
+.fundo .btnEdit{
+    background-color: #7F54D6;
+}
+.fundo .btnDel{
+    background-color: #4C11C4;
+}
+.fundo .btnDel:hover{
+    background-color: red;
+}
+.fundo .btn-info{
+    background-color: #380C91;
+}
+.fundo .btn{
+    margin-bottom: 10px;
+    color: #fff;
+}
+.fundo .btn:hover{
+    color: #ffcc33 !important;
+}
+.fundo .btn-info:hover{
+    background-color: #380C91 !important;
+}
+.fundo .btnCadastro, .formEmpresa .btnCadastro{
+    background-color: #FFD558;
+    color: #380C91;
+    font-weight: bold;
+}
+.fundo .btnCadastro:hover{
+    color: #380C91 !important;
+}
+.formEmpresa{
+    width: 100% !important;
+}
+.formEmpresa .form-horizontal .card{
+    margin-right: 20px !important;
+}
