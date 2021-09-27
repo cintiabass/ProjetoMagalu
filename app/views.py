@@ -90,11 +90,17 @@ def viewProduto(request, pk):
   data = {'db': Produto.objects.get(pk=pk)}
   return render(request, 'viewProduto.html', data)
 
+def filtroProduto(request, pk,):
+  
+   data = {'db': Produto.objects.get(pk=pk)}
+   return render(request, 'filtroProduto.html', data)
+   
+
 def editProduto(request, pk):
   data = {}
   data['db'] = Produto.objects.get(pk=pk)
-  data['form'] = ProdutoForm(instance=data['db'])
-  return render(request, '/formProduto.html', data)
+  data['formProduto'] = ProdutoForm(instance=data['db'])
+  return render(request, 'formProduto.html', data)
 
 def updateProduto(request, pk):
   data = {}

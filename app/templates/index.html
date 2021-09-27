@@ -147,7 +147,7 @@
               <a href="/view/{{ dbs.id }}" class="btn btnVisual">Visualizar Empresa</a>
               <a href="/edit/{{ dbs.id }}" class="btn btnEdit">Editar</a>
               <a href="/delete/{{ dbs.id }}" class="btn btnDel">Deletar</a>
-              <a href="/indexProduto" class="btn btn-info">Visualizar Produtos</a>
+              <a href="/filtroProduto/{{ dbs.id }}" class="btn btn-info">Visualizar Produtos</a>
             </td>
           </tr>
           {% endfor %}
@@ -159,6 +159,7 @@
 
       <div class="col-10 m-auto pt-3 pb-2 text-center">
         <a href="/form" class="btn btnCadastro">Cadastre sua Empresa</a>
+        <a href="/indexProduto" class="btn btn-info"> Produtos</a>
       </div>
     </div>
 

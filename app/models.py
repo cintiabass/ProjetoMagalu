@@ -11,8 +11,8 @@ class Empresa(models.Model):
   
 
   def __str__(self):
-      return self.nome + " - " + self.razao + " - " + self.cnpj + " - " +self.telefone + " - " +self.segmento
-
+      return self.nome + " - " 
+      
 class Produto(models.Model):
   id = models.IntegerField(primary_key=True)
   nomep = models.CharField(max_length=100)
