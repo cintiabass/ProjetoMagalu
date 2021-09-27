@@ -11,36 +11,83 @@
 </head>
 
 <body>
-  <div class="col-8 m-auto pt-2 pb-2 text-center">
-    <h1>Cadastro de Empresas</h1>
-  </div>
+
+  <div class="cor-fundo">
+    <div class="container-fluid bg-roxoo">
+      <div class="row d-flex justify-content-center tela align-items-center">
+        <div class="col-md-6">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-10 d-flex justify-content-center">
+              <div class="col-md-9 card mt-1 border-5 tammax p-2">
+              <div class="row align-items-center">
+                <div class="mt-4 d-flex justify-content-center">
+                  <img src="{% static 'img/logo.png' %}" alt="" height="150px" width="150px" class="img-logo">
+                </div>
+              </div>
+
+              <div class="row d-flex justify-content-center mt-1 mb-3 formEmpresa">
+                <div class="col-md-12 mt-1 d-flex justify-content-center">
+                  <h5>Cadastro de Empresas</h5>
+                </div>
+              </div>
+
+              <div class="row d-flex justify-content-center mt-1 mb-3 formEmpresa"
+                >
+                <div class="col-md-4">
+                <div id="result"></div>
+                {# {{ form.as_p }}#}
+
+                <div class="form-group d-flex justify-content-center formEmpresa">
+                  <form name="form" id="form" method="post"
+                    action="{% if db %}/update/{{ db.id }}/{% else %}/create/{% endif %}">
+                    {% csrf_token %}
+                    <label class="form-group mt-3 cad">Nome: {{ form.nome }}</label>
+                </div>
+                <div class="form-group d-flex justify-content-center">
+                    <label class="form-group mt-3 cad">Razão Social: {{ form.razao }}</ç>
+                    </div>
+                    <div class="form-group d-flex justify-content-center">
+                      <label class="form-group mt-3 cad">CNPJ: {{ form.cnpj }}</label>
+                      </div>
+
+                      <div class="form-group d-flex justify-content-center">
+                      <label class="form-group mt-3 cad">Telefone: {{ form.telefone }}</label>
+                      </div>
+
+                      <div class="form-group d-flex justify-content-center">
+                      <label class="form-group mt-3 cad">Segmento: {{ form.segmento }}</label>
+                      </div>
+
+                    </div>
+                    <div class="d-flex justify-content-center mt-3">
+                      <input type="submit" class="btn mt-4 mb-4 m-lg-1 mb-md-2 btnCadastro" value="Salvar">
+                      <a href="/" class="btn btn-lilas btn-info mt-4 mb-4 m-lg-1 mb-md-2">Voltar</a>
+                    </div>
+                  </form>
+                  
+
+                
 
 
-  <div class="col-4 m-auto pt-4 pb-2 text-center">
-    <div id="result"></div>
-    {# {{ form.as_p }}#}
-    
-      <div class="col-md-4 card m-auto d-flex formEmpresa">
-        <form name="form" id="form" method="post" action="{% if db %}/update/{{ db.id }}/{% else %}/create/{% endif %}">
-          {% csrf_token %}
-          <label class="form-group mt-3 cad">Nome: {{ form.nome }}</label>
-          <label class="form-group mt-3 cad">Razão Social: {{ form.razao }}</ç>
-          <label class="form-group mt-3 cad">Cnpj: {{ form.cnpj }}</label>
-          <label class="form-group mt-3 cad">Telefone: {{ form.telefone }}</label>
-          <label class="form-group mt-3 cad">Segmento: {{ form.segmento }}</label>
 
-          <input type="submit" class="btn mt-4 mb-4 btnCadastro" value="Salvar">
-          <a href="/" class="btn btn-info">Voltar</a>
-        </form>
+              </div>
+            </div>
 
+
+            </div>
+          </div>
+        
       </div>
-
-    
-
+    </div>
   </div>
+  
 
-  {% load static %}
-  <script src="{% static 'javascript.js' %}"></script>
+
+
+    {% load static %}
+    <script src="{% static 'javascript.js' %}"></script>
 </body>
+
+
 
 </html>

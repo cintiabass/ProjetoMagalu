@@ -1,39 +1,99 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <title>FORMULÁRIO</title>
   <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
+
 <body>
-  <div class="col-8 m-auto pt-2 pb-2 text-center">
-    <h1>Cadastro de Produto</h1>
+
+
+
+  <div class="container-fluid bg-roxoo">
+    <div class="row d-flex justify-content-center tela align-items-center">
+      <div class="col-md-6">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-10 d-flex justify-content-center">
+            <div class="col-md-9 card mt-1 border-5 tammax p-2">
+              <div class="row align-items-center">
+                <div class="mt-4 d-flex justify-content-center">
+                  <img src="{% static 'img/logo.png' %}" alt="" height="150px" width="150px" class="img-logo">
+                </div>
+              </div>
+
+              <div class="row d-flex justify-content-center mt-1 mb-3 formEmpresa">
+                <div class="col-md-12 mt-1 d-flex justify-content-center">
+                  <h5 class="texto-roxo">Cadastro de Produtos</h5>
+                </div>
+              </div>
+
+
+
+
+
+
+
+              <div class="row d-flex justify-content-center mt-1 mb-3 formEmpresa">
+                <div id="result"></div>
+                {# {{ form.as_p }}#}
+
+                <div class="col-md-4">
+
+                  <form name="formProduto" id="formProduto" method="post"
+                    action="{% if db %}/updateProduto/{{ db.id }}/{% else %}/createProduto/{% endif %}">
+                    {% csrf_token %}
+                    <div class="form-group mt-2 d-flex justify-content-center">
+                      <label class="form-group mt-3 cad">Nome: {{ formProduto.nomep }}</label>
+                    </div>
+
+                    <div class="form-group mt-2 d-flex justify-content-center">
+                      <label class="form-group mt-3 cad">Tipo: {{ formProduto.tipo }}</label>
+                    </div>
+
+                    <div class="form-group mt-2 d-flex justify-content-center">
+                      <label class="form-group mt-3 cad">Preco: {{ formProduto.preco }}</label>
+                    </div>
+
+                    <div class="form-group mt-2 d-flex justify-content-center">
+                      <label class="form-group mt-3 cad">Qtdade: {{ formProduto.qtdade }}</label>
+                    </div>
+
+                    <div class="form-group mt-2 d-flex justify-content-center">
+                      <label class="form-group mt-3 cad">Fornecedor: {{ formProduto.fornecedor }}</label>
+                    </div>
+
+
+                    <div class="form-group mt-2 d-flex justify-content-center">
+                      <label class="form-group mt-3 cad my-1 mr-2">Empresa: {{ formProduto.empresa }}</label>
+                    </div>
+
+
+                    <div class="d-flex justify-content-center mt-3">
+                      <input type="submit" class="btn btnCadastro mt-4 mb-4 m-lg-1 mb-md-2 " value="Salvar">
+                      <a href="/indexProduto" class="btn btn-info mt-4 mb-4 m-lg-1 mb-md-2 ">Voltar</a>
+                  </form>
+                </div>
+
+
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
   </div>
-
-  <div class="col-8 m-auto pt-3 pb-2 text-center">
-    <a href="/indexProduto" class="btn btn-info">Voltar</a>
-  </div>
-
-  <div class="col-8 m-auto pt-4 pb-2 text-center">
-    <div id="result"></div>
-{#    {{ form.as_p }}#}
-
-    <form name="formProduto" id="formProduto" method="post" action="{% if db %}/updateProduto/{{ db.id }}/{% else %}/createProduto/{% endif %}">
-      {% csrf_token %}
-      <div class="form-group mt-4">Nome: {{ formProduto.nomep }}</div>
-      <div class="form-group mt-4">Tipo: {{ formProduto.tipo }}</div>
-      <div class="form-group mt-4">Preco: {{ formProduto.preco }}</div>
-      <div class="form-group mt-4">Qtdade: {{ formProduto.qtdade }}</div>
-      <div class="form-group mt-4">Fornecedor: {{ formProduto.fornecedor }}</div>
-      <div class="form-group mt-4">Empresa: {{ formProduto.empresa }}</div>
-
-      <input type="submit" class="btn btn-success" value="Salvar">
-    </form>
   </div>
 
   {% load static %}
   <script src="{% static 'javascript.js' %}"></script>
 </body>
+
 </html>
